@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by Artisteer v4.0.0.58475 -->
+    <meta charset="utf-8">
+    <title>Página Nueva</title>
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="style.responsive.css" media="all">
+
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+    <script src="script.responsive.js"></script>
+<meta name="description" content="Description">
+<meta name="keywords" content="Keywords">
+
+
+<script>jQuery(function($) {
+    'use strict';
+    if ($.fn.slider) {
+        $(".art-slidecontainerd589f").each(function () {
+            var slideContainer = $(this), tmp;
+            var inner = $(".art-slider-inner", slideContainer);
+            var helper = null;
+
+            if ($.support.transition) {
+                helper = new BackgroundHelper();
+                helper.init("horizontal", "next", $(".art-slide-item", inner).first().css($.support.transition.prefix + "transition-duration"));
+                inner.children().each(function () {
+                    helper.processSlide($(this));
+                });
+
+                var items = helper.items(helper.current(0), helper.next(0));
+                helper.setBackground(inner, items);
+                helper.setPosition(inner, items);
+
+                slideContainer.on("beforeSlide", function () {
+                    var activeItem = $(".active", this),
+                        nextItem = $(".next, .prev", this),
+                        activePos = $(".art-slide-item", this).index(activeItem),
+                        nextPos = $(".art-slide-item", this).index(nextItem),
+                        currentItems = helper.items(helper.current(activePos), helper.current(nextPos));
+
+                    helper.transition(inner, false);
+                    helper.setBackground(inner, currentItems);
+                    helper.setPosition(inner, currentItems);
+                    if (inner.length) {
+                        tmp = inner.get(0).offsetHeight;
+                    }
+
+                    var movedCurrentItems = helper.items(helper.current(activePos), helper.current(nextPos), true);
+                    helper.transition(inner, true);
+                    helper.setPosition(inner, movedCurrentItems);
+                });
+            }
+
+            inner.children().eq(0).addClass("active");
+            slideContainer.slider({
+                pause: 2600,
+                speed: 600,
+                repeat: true,
+                animation: "horizontal",
+                direction: "next",
+                navigator: slideContainer.siblings(".art-slidenavigatord589f"),
+                helper: helper
+                            });
+        });
+    }
+});
+</script><style>.art-content .art-postcontent-0 .layout-item-old-0 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-width:1px;border-top-color:#A100E0;border-right-color:#A100E0;border-bottom-color:#A100E0;border-left-color:#A100E0;  border-collapse: separate;  }
+.art-content .art-postcontent-0 .layout-item-old-1 { border-top-width:1px;border-top-style:solid;border-top-color:#A100E0;margin-top: 5px;margin-bottom: 5px;  }
+.art-content .art-postcontent-0 .layout-item-old-2 { border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-color:#A100E0;border-right-color:#A100E0;border-bottom-color:#A100E0;border-left-color:#A100E0; padding: 12px; border-radius: 10px;  }
+.art-content .art-postcontent-0 .layout-item-old-3 { border-right-style:solid;border-right-width:1px;border-right-color:#A100E0; padding-right: 10px;padding-left: 10px;  }
+.art-content .art-postcontent-0 .layout-item-old-4 { padding-right: 10px;padding-left: 10px;  }
+.ie7 .post .layout-cell {border:none !important; padding:0 !important; }
+.ie6 .post .layout-cell {border:none !important; padding:0 !important; }
+
+.art-slidecontainerd589f {
+    position: relative;
+        width: 498px;
+    height: 311px;
+        }
+
+.art-slidecontainerd589f .art-slide-item
+{
+
+}
+
+.art-slidecontainerd589f .art-slide-item {
+    -webkit-transition: 600ms ease-in-out left;
+    -moz-transition: 600ms ease-in-out left;
+    -ms-transition: 600ms ease-in-out left;
+    -o-transition: 600ms ease-in-out left;
+    transition: 600ms ease-in-out left;
+    position: relative;
+    display: none;
+    width:  100%;
+    height: 100%;
+}
+
+.art-slidecontainerd589f .active, .art-slidecontainerd589f .next, .art-slidecontainerd589f .prev {
+    display: block;
+}
+
+.art-slidecontainerd589f .active {
+    left: 0;
+}
+
+.art-slidecontainerd589f .next, .art-slidecontainerd589f .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.art-slidecontainerd589f .next {
+    left: 100%;
+}
+
+.art-slidecontainerd589f .prev {
+    left: -100%;
+}
+
+.art-slidecontainerd589f .next.forward, .art-slidecontainerd589f .prev.back {
+    left: 0;
+}
+
+.art-slidecontainerd589f .active.forward {
+    left: -100%;
+}
+
+.art-slidecontainerd589f .active.back {
+    left: 100%;
+}
+
+
+
+
+.art-slided589f0 {
+    background-image:  url('images/slided589f0.jpg');
+    background-position:  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f1 {
+    background-image:  url('images/slided589f1.jpg');
+    background-position:  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f2 {
+    background-image: url('images/slided589f2-object1064268173.png'),  url('images/slided589f2.jpg');
+    background-position: 0px 74px,  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f3 {
+    background-image:  url('images/slided589f3.jpg');
+    background-position:  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f4 {
+    background-image:  url('images/slided589f4.jpg');
+    background-position:  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f5 {
+    background-image: url('images/slided589f5-object1620795221.png'),  url('images/slided589f5.jpg');
+    background-position: -18px 58px,  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f6 {
+    background-image:  url('images/slided589f6.jpg');
+    background-position:  0 0;
+    background-repeat: no-repeat;
+}
+.art-slided589f7 {
+    background-image: url('images/slided589f7-object1775126415.png'),  url('images/slided589f7.jpg');
+    background-position: -8px -104px,  0 0;
+    background-repeat: no-repeat;
+}
+
+
+.art-slidenavigatord589f {
+  display: inline-block;
+  position: absolute;
+  direction: ltr !important;
+  top: 285px;
+  left: 8.23%;
+  z-index: 101;
+  line-height: 0 !important;
+  -webkit-background-origin: border !important;
+  -moz-background-origin: border !important;
+  background-origin: border-box !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+    white-space: nowrap;
+    }
+.art-slidenavigatord589f
+{
+background: #C83DFF;background: linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;background: -webkit-linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;background: -moz-linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;background: -o-linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;background: -ms-linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;background: linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;-svg-background: linear-gradient(top, rgba(222, 138, 255, 0.6) 0, rgba(183, 0, 255, 0.6) 87%, rgba(168, 0, 235, 0.6) 100%) no-repeat;
+-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+
+
+padding:7px;
+
+
+
+
+
+}
+.art-slidenavigatord589f > a
+{
+background: #8000B2;background: #8000B2;background: #8000B2;background: #8000B2;background: #8000B2;background: #8000B2;background: #8000B2;-svg-background: #8000B2;
+-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;
+
+
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+.art-slidenavigatord589f > a.active
+{
+background: #BABABA;background: #BABABA;background: #BABABA;background: #BABABA;background: #BABABA;background: #BABABA;background: #BABABA;-svg-background: #BABABA;
+-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;
+
+
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+.art-slidenavigatord589f > a:hover
+{
+background: #737373;background: #737373;background: #737373;background: #737373;background: #737373;background: #737373;background: #737373;-svg-background: #737373;
+-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;
+
+
+
+margin:0 10px 0 0;
+
+width: 10px;
+
+height: 10px;
+}
+
+</style></head>
+<body>
+<div id="art-main">
+    <div id="art-header-bg" class="clearfix">
+            </div>
+    <div class="art-sheet clearfix">
+<header class="art-header clearfix">
+
+
+    <div class="art-shapes">
+<h1 class="art-headline" data-left="89.42%">
+    <a href="#">Stay All Night Long</a>
+</h1>
+<h2 class="art-slogan" data-left="89.03%">enjoy dance drive and freedom</h2>
+
+
+            </div>
+<div class="art-textblock art-object1946445786" data-left="11.07%">
+    <form class="art-search" name="Search" action="javascript:void(0)">
+    <input type="text" value="">
+    <input type="submit" value="Search" name="search" class="art-search-button">
+</form>
+</div>
+                <div id="art-flash-area">
+                    <div id="art-flash-container">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="2200" height="550" id="art-flash-object">
+                        <param name="movie" value="images/flash.swf">
+                        <param name="quality" value="medium">
+                    	<param name="scale" value="exactfit">
+                    	<param name="wmode" value="transparent">
+                    	<param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.70&amp;framerate1=20&amp;loop=true&amp;wmode=transparent">
+                        <param name="swfliveconnect" value="true">
+                        <!--[if !IE]>-->
+                        <object type="application/x-shockwave-flash" data="images/flash.swf" width="2200" height="550">
+                            <param name="quality" value="medium">
+                    	    <param name="scale" value="exactfit">
+                            <param name="wmode" value="transparent">
+                                                    	    <param name="flashvars" value="color1=0xFFFFFF&amp;alpha1=.70&amp;framerate1=20&amp;loop=true&amp;wmode=transparent">
+                            <param name="swfliveconnect" value="true">
+                        <!--<![endif]-->
+                          	<div class="art-flash-alt"><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player"></a></div>
+                        <!--[if !IE]>-->
+                        </object>
+                        <!--<![endif]-->
+                    </object>
+                    </div>
+                    </div>
+                    
+</header>
+<nav class="art-nav clearfix">
+    <ul class="art-hmenu"><li><a href="home.html" class="active">Home</a></li><li><a href="contacts.html">Contacts</a></li><li><a href="pagina-nueva.html">Página Nueva</a></li><li><a href="pagina-nueva-2.html">Página Nueva 2</a> 
+    </nav>
+<div class="art-layout-wrapper clearfix">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content clearfix"><article class="art-post art-article">
+                                <div class="art-postmetadataheader">
+                                        <h2 class="art-postheader"><span class="art-postheadericon">Página Nueva</span></h2>
+                                    </div>
+                                                
+                <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout layout-item-old-0">
+<div class="art-content-layout-row">
+<div class="art-layout-cell layout-item-old-2" style="width: 100%"><div id="d589f" style="position: relative; display: inline-block; z-index: 0; margin: 0px;  border-width: 0px;  " class="art-collage">
+<div class="art-slider art-slidecontainerd589f">
+    <div class="art-slider-inner">
+<div class="art-slide-item art-slided589f0">
+
+</div>
+<div class="art-slide-item art-slided589f1">
+
+</div>
+<div class="art-slide-item art-slided589f2">
+
+</div>
+<div class="art-slide-item art-slided589f3">
+
+</div>
+<div class="art-slide-item art-slided589f4">
+
+</div>
+<div class="art-slide-item art-slided589f5">
+
+</div>
+<div class="art-slide-item art-slided589f6">
+
+</div>
+<div class="art-slide-item art-slided589f7">
+
+</div>
+
+    </div>
+</div>
+<div class="art-slidenavigator art-slidenavigatord589f">
+<a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a><a href="#" class="art-slidenavigatoritem"></a>
+</div>
+
+
+
+    </div>
+</div>
+</div>
+</div>
+<div class="art-content-layout-br layout-item-old-1">
+<table class="art-article" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><br></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="art-content-layout">
+<div class="art-content-layout-row">
+<div class="art-layout-cell layout-item-old-3" style="width: 100%">
+<h3><br></h3>
+<ul>
+<li><span style="font-weight: bold;"><br></span></li>
+</ul>
+</div>
+<div class="art-layout-cell layout-item-old-4" style="width: 100%">
+<h3><br></h3>
+<ul>
+<li><span style="font-weight: bold;"><br></span></li>
+</ul>
+</div>
+</div>
+</div></div>
+                                
+                </article><div class="art-vmenublock clearfix">
+        <div class="art-vmenublockheader">
+            <h3 class="t">Vertical Menu</h3>
+        </div>
+        <div class="art-vmenublockcontent">
+<ul class="art-vmenu"><li><a href="home.html" class="active">Home</a></li><li><a href="contacts.html">Contacts</a></li><li><a href="pagina-nueva.html">Página Nueva</a></li><li><a href="pagina-nueva-2.html">Página Nueva 2</a></li><li><a href="pagina-nueva-3.html">Página Nueva 3</a></li></ul>
+                
+        </div>
+</div></div>
+                    </div>
+                </div>
+            </div><footer class="art-footer clearfix">
+<div style="position:relative;display:inline-block;padding-left:30px;padding-right:30px"><a title="RSS" class="art-rss-tag-icon" style="position: absolute; bottom: -10px; left: -6px; line-height: 30px; " href="#"></a>
+<p><img width="49" height="49" alt="" class="art-lightbox" src="images/IMG_0455.jpg"><img width="147" height="48" alt="" class="art-lightbox" src="images/governacion.png"><img width="157" height="49" alt="" class="art-lightbox" src="images/logo-alcaldia.png"><br></p>
+</div>
+</footer>
+
+    </div>
+    <p class="art-page-footer">
+        <span id="art-footnote-links">Designed by <a href="www.disenamostuweb.com" target="_blank">tugruppo.com</a>.</span>
+    </p>
+</div>
+
+
+</body></html>
